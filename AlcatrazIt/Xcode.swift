@@ -32,7 +32,8 @@ struct Xcode {
         do {
             try unsigner.irreversiblyUnsign()
             return Xcode(url: url, great: true)
-        } catch {
+        } catch (let error) {
+            print("Error: \(error)")
             return .none
         }
     }

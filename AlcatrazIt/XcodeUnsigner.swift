@@ -7,7 +7,7 @@ struct XcodeUnsigner {
     }
     
     let baseURL: URL
-    let manager = FileManager()
+    let manager = FileManager.default()
     
     init(xcode: Xcode) {
         baseURL = xcode.url
@@ -28,8 +28,8 @@ struct XcodeUnsigner {
     
     private func unsignExecutable(at originalLocation: URL, to unsignedLocation: URL) throws {
         
-        guard let inputPath = originalLocation.absoluteString,
-            outputPath = unsignedLocation.absoluteString else {
+        guard let inputPath = originalLocation.path,
+            outputPath = unsignedLocation.path else {
                 return
         }
         

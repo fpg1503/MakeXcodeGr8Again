@@ -5,13 +5,14 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let xcode = Xcode(url: URL(fileURLWithPath: "~/Downloads/Xcode"))
+        let xcode = Xcode(url: URL(fileURLWithPath: "/Users/fpg1503/Downloads/Xcode/Xcode-beta.app/"))
         
         if let xcodeGreat = xcode.makeGreatAgain() {
             print("WOHOOL! \(xcodeGreat)")
         } else {
             print("Not this time, brah")
         }
+        
         
         // Do any additional setup after loading the view.
     }
@@ -21,7 +22,6 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
 
 }
 
