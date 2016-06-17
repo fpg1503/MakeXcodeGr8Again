@@ -14,6 +14,8 @@
 		A3AACB111D14A46800DFEC9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AACB0F1D14A46800DFEC9F /* Main.storyboard */; };
 		A3AACB3A1D14A5D500DFEC9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AACB391D14A5D500DFEC9F /* ViewController.swift */; };
 		A3AACB411D14A63800DFEC9F /* XcodeUnsigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */; };
+		A3C4D8001D14B43F0010B6AC /* XcodeCopier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D7FF1D14B43F0010B6AC /* XcodeCopier.swift */; };
+		A3C4D8021D14B6F30010B6AC /* Xcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D8011D14B6F30010B6AC /* Xcode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		A3AACB121D14A46800DFEC9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3AACB391D14A5D500DFEC9F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeUnsigner.swift; sourceTree = "<group>"; };
+		A3C4D7FF1D14B43F0010B6AC /* XcodeCopier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeCopier.swift; sourceTree = "<group>"; };
+		A3C4D8011D14B6F30010B6AC /* Xcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xcode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				A3AACB091D14A46800DFEC9F /* AppDelegate.swift */,
 				A3AACB391D14A5D500DFEC9F /* ViewController.swift */,
 				A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */,
+				A3C4D8011D14B6F30010B6AC /* Xcode.swift */,
+				A3C4D7FF1D14B43F0010B6AC /* XcodeCopier.swift */,
 				A33714061D14AB9A007465C7 /* Unsign */,
 				A3AACB0D1D14A46800DFEC9F /* Assets.xcassets */,
 				A3AACB0F1D14A46800DFEC9F /* Main.storyboard */,
@@ -156,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3AACB411D14A63800DFEC9F /* XcodeUnsigner.swift in Sources */,
+				A3C4D8021D14B6F30010B6AC /* Xcode.swift in Sources */,
+				A3C4D8001D14B43F0010B6AC /* XcodeCopier.swift in Sources */,
 				A3AACB3A1D14A5D500DFEC9F /* ViewController.swift in Sources */,
 				A337140B1D14AB9A007465C7 /* endian.m in Sources */,
 				A337140C1D14AB9A007465C7 /* unsign.m in Sources */,
