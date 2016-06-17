@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A3AACB051D14A46700DFEC9F"
-               BuildableName = "AlcatrazIt.app"
-               BlueprintName = "AlcatrazIt"
-               ReferencedContainer = "container:AlcatrazIt.xcodeproj">
+               BlueprintIdentifier = "A3AACB281D14A59900DFEC9F"
+               BuildableName = "Unsign"
+               BlueprintName = "Unsign"
+               ReferencedContainer = "container:Unsign.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A3AACB051D14A46700DFEC9F"
-            BuildableName = "AlcatrazIt.app"
-            BlueprintName = "AlcatrazIt"
-            ReferencedContainer = "container:AlcatrazIt.xcodeproj">
+            BlueprintIdentifier = "A3AACB281D14A59900DFEC9F"
+            BuildableName = "Unsign"
+            BlueprintName = "Unsign"
+            ReferencedContainer = "container:Unsign.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A3AACB051D14A46700DFEC9F"
-            BuildableName = "AlcatrazIt.app"
-            BlueprintName = "AlcatrazIt"
-            ReferencedContainer = "container:AlcatrazIt.xcodeproj">
+            BlueprintIdentifier = "A3AACB281D14A59900DFEC9F"
+            BuildableName = "Unsign"
+            BlueprintName = "Unsign"
+            ReferencedContainer = "container:Unsign.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A3AACB051D14A46700DFEC9F"
-            BuildableName = "AlcatrazIt.app"
-            BlueprintName = "AlcatrazIt"
-            ReferencedContainer = "container:AlcatrazIt.xcodeproj">
+            BlueprintIdentifier = "A3AACB281D14A59900DFEC9F"
+            BuildableName = "Unsign"
+            BlueprintName = "Unsign"
+            ReferencedContainer = "container:Unsign.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
