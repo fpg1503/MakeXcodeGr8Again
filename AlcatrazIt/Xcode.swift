@@ -5,7 +5,7 @@ struct Xcode {
     let url: URL
     
     func makeGreatAgain() -> URL? {
-        let copier = XcodeCopier(baseURL: url)
+        let _ = XcodeCopier(baseURL: url)
         
         return .none
     }

@@ -230,9 +230,9 @@ ub_unsign(FILE *in, FILE *out, const char *infile, const char *outfile, off_t si
                 off_t size = end - offset;
 
                 errno = ERANGE;
-                uint32_t uoffset = offset;
+                uint32_t uoffset = (uint32_t)offset;
                 expect(uoffset == offset, "offset");
-                uint32_t usize = size;
+                uint32_t usize = (uint32_t)size;
                 expect(usize == size, "size");
 
                 be32enc(&arch.offset, uoffset);
