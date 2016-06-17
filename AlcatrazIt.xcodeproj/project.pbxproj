@@ -12,17 +12,9 @@
 		A3AACB111D14A46800DFEC9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AACB0F1D14A46800DFEC9F /* Main.storyboard */; };
 		A3AACB3A1D14A5D500DFEC9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AACB391D14A5D500DFEC9F /* ViewController.swift */; };
 		A3AACB411D14A63800DFEC9F /* XcodeUnsigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */; };
+		A3AACB461D14AA8900DFEC9F /* endian.c in Sources */ = {isa = PBXBuildFile; fileRef = A3AACB421D14AA8900DFEC9F /* endian.c */; };
+		A3AACB471D14AA8900DFEC9F /* unsign.c in Sources */ = {isa = PBXBuildFile; fileRef = A3AACB441D14AA8900DFEC9F /* unsign.c */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A3AACB371D14A59900DFEC9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A3AACB331D14A59900DFEC9F /* Unsign.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A3AACB291D14A59900DFEC9F;
-			remoteInfo = Unsign;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A3AACB061D14A46800DFEC9F /* AlcatrazIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcatrazIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,9 +22,11 @@
 		A3AACB0D1D14A46800DFEC9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3AACB101D14A46800DFEC9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3AACB121D14A46800DFEC9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3AACB331D14A59900DFEC9F /* Unsign.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Unsign.xcodeproj; path = Unsign/Unsign.xcodeproj; sourceTree = "<group>"; };
 		A3AACB391D14A5D500DFEC9F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeUnsigner.swift; sourceTree = "<group>"; };
+		A3AACB421D14AA8900DFEC9F /* endian.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = endian.c; sourceTree = "<group>"; };
+		A3AACB431D14AA8900DFEC9F /* endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endian.h; sourceTree = "<group>"; };
+		A3AACB441D14AA8900DFEC9F /* unsign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unsign.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +59,10 @@
 		A3AACB081D14A46800DFEC9F /* AlcatrazIt */ = {
 			isa = PBXGroup;
 			children = (
-				A3AACB331D14A59900DFEC9F /* Unsign.xcodeproj */,
 				A3AACB091D14A46800DFEC9F /* AppDelegate.swift */,
 				A3AACB391D14A5D500DFEC9F /* ViewController.swift */,
 				A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */,
+				A3AACB451D14AA8900DFEC9F /* Unsign */,
 				A3AACB0D1D14A46800DFEC9F /* Assets.xcassets */,
 				A3AACB0F1D14A46800DFEC9F /* Main.storyboard */,
 				A3AACB121D14A46800DFEC9F /* Info.plist */,
@@ -76,12 +70,14 @@
 			path = AlcatrazIt;
 			sourceTree = "<group>";
 		};
-		A3AACB341D14A59900DFEC9F /* Products */ = {
+		A3AACB451D14AA8900DFEC9F /* Unsign */ = {
 			isa = PBXGroup;
 			children = (
-				A3AACB381D14A59900DFEC9F /* Unsign */,
+				A3AACB421D14AA8900DFEC9F /* endian.c */,
+				A3AACB431D14AA8900DFEC9F /* endian.h */,
+				A3AACB441D14AA8900DFEC9F /* unsign.c */,
 			);
-			name = Products;
+			path = Unsign;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,28 +127,12 @@
 			mainGroup = A3AACAFD1D14A46700DFEC9F;
 			productRefGroup = A3AACB071D14A46800DFEC9F /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A3AACB341D14A59900DFEC9F /* Products */;
-					ProjectRef = A3AACB331D14A59900DFEC9F /* Unsign.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A3AACB051D14A46700DFEC9F /* AlcatrazIt */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A3AACB381D14A59900DFEC9F /* Unsign */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = Unsign;
-			remoteRef = A3AACB371D14A59900DFEC9F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A3AACB041D14A46700DFEC9F /* Resources */ = {
@@ -171,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3AACB461D14AA8900DFEC9F /* endian.c in Sources */,
 				A3AACB411D14A63800DFEC9F /* XcodeUnsigner.swift in Sources */,
 				A3AACB3A1D14A5D500DFEC9F /* ViewController.swift in Sources */,
+				A3AACB471D14AA8900DFEC9F /* unsign.c in Sources */,
 				A3AACB0A1D14A46800DFEC9F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

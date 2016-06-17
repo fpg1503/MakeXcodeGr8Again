@@ -251,23 +251,9 @@ ub_unsign(FILE *in, FILE *out, const char *infile, const char *outfile, off_t si
 
 const char *suffix = ".unsigned";
 
-int
-main(int argc, const char *const *argv) {
-        if(argc < 2 || argc > 3) {
-                puts("usage: unsign file [outfile]");
-                return 1;
-        }
+void unsign(char *infile, char* outfile) {
 
-        const char *infile = argv[1];
-        char *outfile;
-        if(argc > 2) {
-                outfile = strdup(argv[2]);
-                expect(outfile, "allocate");
-        } else {
-                outfile = malloc(strlen(infile) + strlen(suffix) + 1);
-                expect(outfile, "allocate");
-                sprintf(outfile, "%s%s", infile, suffix);
-        }
+        expect(outfile, "allocate");
 
         int infd = open(infile, O_RDONLY);
         expect(infd != -1, infile);
