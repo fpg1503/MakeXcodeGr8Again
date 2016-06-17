@@ -249,10 +249,10 @@ ub_unsign(FILE *in, FILE *out, const char *infile, const char *outfile, off_t si
         }
 }
 
-const char *suffix = ".unsigned";
+void unsign(char *infile, char *outfile) {
 
-void unsign(char *infile, char* outfile) {
-
+    printf("%s - %s", infile, outfile);
+    
         expect(outfile, "allocate");
 
         int infd = open(infile, O_RDONLY);

@@ -13,7 +13,8 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let unsigner = XcodeUnsigner(baseURL: URL(fileURLWithPath: ""))
+        let unsigner = XcodeUnsigner(baseURL: URL(fileURLWithPath: "~/Downloads/Xcode"))
+        try! unsigner.unsignBlah()
         print(unsigner)
         
         // Do any additional setup after loading the view.

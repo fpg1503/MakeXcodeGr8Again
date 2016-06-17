@@ -9,6 +9,11 @@
 import Foundation
 
 struct XcodeUnsigner {
+    
+    enum Error: ErrorProtocol {
+        case inputFileDoesNotExist(String)
+    }
+    
     let baseURL: URL
     let manager = FileManager()
     
@@ -19,13 +24,29 @@ struct XcodeUnsigner {
         return URL(fileURLWithPath: "Contents/MacOS/Xcode.unsigned", relativeTo: baseURL)
     }
     
-    func unsign() throws {
+    func unsignBlah() throws {
         try unsignExecutable(at: binaryLocation, to: unsignedLocation)
         try manager.removeItem(at: binaryLocation)
         try manager.moveItem(at: unsignedLocation, to: binaryLocation)
     }
     
     private func unsignExecutable(at originalLocation: URL, to unsignedLocation: URL) throws {
-        //TODO!
+        
+        guard let inputPath = originalLocation.absoluteString,
+            outputPath = unsignedLocation.absoluteString else {
+                return
+        }
+        
+        guard manager.fileExists(atPath: inputPath) else {
+                throw Error.inputFileDoesNotExist(inputPath)
+        }
+        
+        let inputArray = inputPath.cString(using: .ascii)
+        let outputArray = outputPath.cString(using: .ascii)
+        
+        let inputPointer = UnsafeMutablePointer<CChar>(inputArray)
+        let outputPointer = UnsafeMutablePointer<CChar>(outputArray)
+        
+        unsign(inputPointer, outputPointer)
     }
 }
