@@ -5,13 +5,13 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let unsigner = XcodeUnsigner(baseURL: URL(fileURLWithPath: "~/Downloads/Xcode"))
-        do {
-            try unsigner.unsignBlah()
-        } catch (let error) {
-            print(error)
+        let xcode = Xcode(url: URL(fileURLWithPath: "~/Downloads/Xcode"))
+        
+        if let xcodeGreat = xcode.makeGreatAgain() {
+            print("WOHOOL! \(xcodeGreat)")
+        } else {
+            print("Not this time, brah")
         }
-        print(unsigner)
         
         // Do any additional setup after loading the view.
     }

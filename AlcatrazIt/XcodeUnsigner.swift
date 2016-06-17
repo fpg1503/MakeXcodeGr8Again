@@ -9,6 +9,10 @@ struct XcodeUnsigner {
     let baseURL: URL
     let manager = FileManager()
     
+    init(xcode: Xcode) {
+        baseURL = xcode.url
+    }
+    
     private var binaryLocation: URL {
         return URL(fileURLWithPath: "Contents/MacOS/Xcode", relativeTo: baseURL)
     }
@@ -16,7 +20,7 @@ struct XcodeUnsigner {
         return URL(fileURLWithPath: "Contents/MacOS/Xcode.unsigned", relativeTo: baseURL)
     }
     
-    func unsignBlah() throws {
+    func irreversiblyUnsign() throws {
         try unsignExecutable(at: binaryLocation, to: unsignedLocation)
         try manager.removeItem(at: binaryLocation)
         try manager.moveItem(at: unsignedLocation, to: binaryLocation)
