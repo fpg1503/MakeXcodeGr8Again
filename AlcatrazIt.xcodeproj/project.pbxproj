@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A337140B1D14AB9A007465C7 /* endian.m in Sources */ = {isa = PBXBuildFile; fileRef = A33714081D14AB9A007465C7 /* endian.m */; };
 		A337140C1D14AB9A007465C7 /* unsign.m in Sources */ = {isa = PBXBuildFile; fileRef = A337140A1D14AB9A007465C7 /* unsign.m */; };
+		A375D5F51D1CA9C800EBA13F /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A375D5F41D1CA9C800EBA13F /* DragView.swift */; };
+		A375D5F71D1CA9F400EBA13F /* NSDraggingInfo+DraggedFileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A375D5F61D1CA9F400EBA13F /* NSDraggingInfo+DraggedFileURL.swift */; };
 		A3AACB0A1D14A46800DFEC9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AACB091D14A46800DFEC9F /* AppDelegate.swift */; };
 		A3AACB0E1D14A46800DFEC9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3AACB0D1D14A46800DFEC9F /* Assets.xcassets */; };
 		A3AACB111D14A46800DFEC9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AACB0F1D14A46800DFEC9F /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 		A33714091D14AB9A007465C7 /* unsign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unsign.h; sourceTree = "<group>"; };
 		A337140A1D14AB9A007465C7 /* unsign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = unsign.m; sourceTree = "<group>"; };
 		A337140D1D14ABCA007465C7 /* AlcatrazIt-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlcatrazIt-BridgingHeader.h"; sourceTree = "<group>"; };
+		A375D5F41D1CA9C800EBA13F /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+		A375D5F61D1CA9F400EBA13F /* NSDraggingInfo+DraggedFileURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+DraggedFileURL.swift"; sourceTree = "<group>"; };
 		A3AACB061D14A46800DFEC9F /* AlcatrazIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcatrazIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3AACB091D14A46800DFEC9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3AACB0D1D14A46800DFEC9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 			children = (
 				A3AACB091D14A46800DFEC9F /* AppDelegate.swift */,
 				A3AACB391D14A5D500DFEC9F /* ViewController.swift */,
+				A375D5F41D1CA9C800EBA13F /* DragView.swift */,
+				A375D5F61D1CA9F400EBA13F /* NSDraggingInfo+DraggedFileURL.swift */,
 				A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */,
 				A3C4D8011D14B6F30010B6AC /* Xcode.swift */,
 				A3C4D7FF1D14B43F0010B6AC /* XcodeCopier.swift */,
@@ -163,6 +169,8 @@
 			files = (
 				A3AACB411D14A63800DFEC9F /* XcodeUnsigner.swift in Sources */,
 				A3C4D8021D14B6F30010B6AC /* Xcode.swift in Sources */,
+				A375D5F51D1CA9C800EBA13F /* DragView.swift in Sources */,
+				A375D5F71D1CA9F400EBA13F /* NSDraggingInfo+DraggedFileURL.swift in Sources */,
 				A3C4D8001D14B43F0010B6AC /* XcodeCopier.swift in Sources */,
 				A3AACB3A1D14A5D500DFEC9F /* ViewController.swift in Sources */,
 				A337140B1D14AB9A007465C7 /* endian.m in Sources */,
