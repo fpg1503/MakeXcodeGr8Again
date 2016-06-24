@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A3AACB051D14A46700DFEC9F"
-               BuildableName = "AlcatrazIt.app"
-               BlueprintName = "AlcatrazIt"
-               ReferencedContainer = "container:AlcatrazIt.xcodeproj">
+               BuildableName = "MakeXcodeGr8Again.app"
+               BlueprintName = "MakeXcodeGr8Again"
+               ReferencedContainer = "container:MakeXcodeGr8Again.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A3AACB051D14A46700DFEC9F"
-            BuildableName = "AlcatrazIt.app"
-            BlueprintName = "AlcatrazIt"
-            ReferencedContainer = "container:AlcatrazIt.xcodeproj">
+            BuildableName = "MakeXcodeGr8Again.app"
+            BlueprintName = "MakeXcodeGr8Again"
+            ReferencedContainer = "container:MakeXcodeGr8Again.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A3AACB051D14A46700DFEC9F"
-            BuildableName = "AlcatrazIt.app"
-            BlueprintName = "AlcatrazIt"
-            ReferencedContainer = "container:AlcatrazIt.xcodeproj">
+            BuildableName = "MakeXcodeGr8Again.app"
+            BlueprintName = "MakeXcodeGr8Again"
+            ReferencedContainer = "container:MakeXcodeGr8Again.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A3AACB051D14A46700DFEC9F"
-            BuildableName = "AlcatrazIt.app"
-            BlueprintName = "AlcatrazIt"
-            ReferencedContainer = "container:AlcatrazIt.xcodeproj">
+            BuildableName = "MakeXcodeGr8Again.app"
+            BlueprintName = "MakeXcodeGr8Again"
+            ReferencedContainer = "container:MakeXcodeGr8Again.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

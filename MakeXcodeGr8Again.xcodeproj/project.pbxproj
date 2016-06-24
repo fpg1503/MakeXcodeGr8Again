@@ -25,10 +25,10 @@
 		A33714081D14AB9A007465C7 /* endian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = endian.m; sourceTree = "<group>"; };
 		A33714091D14AB9A007465C7 /* unsign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unsign.h; sourceTree = "<group>"; };
 		A337140A1D14AB9A007465C7 /* unsign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = unsign.m; sourceTree = "<group>"; };
-		A337140D1D14ABCA007465C7 /* AlcatrazIt-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlcatrazIt-BridgingHeader.h"; sourceTree = "<group>"; };
+		A337140D1D14ABCA007465C7 /* MakeXcodeGr8Again-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MakeXcodeGr8Again-BridgingHeader.h"; sourceTree = "<group>"; };
 		A375D5F41D1CA9C800EBA13F /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 		A375D5F61D1CA9F400EBA13F /* NSDraggingInfo+DraggedFileURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+DraggedFileURL.swift"; sourceTree = "<group>"; };
-		A3AACB061D14A46800DFEC9F /* AlcatrazIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcatrazIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3AACB061D14A46800DFEC9F /* MakeXcodeGr8Again.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeXcodeGr8Again.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3AACB091D14A46800DFEC9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3AACB0D1D14A46800DFEC9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3AACB101D14A46800DFEC9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 		A3AACAFD1D14A46700DFEC9F = {
 			isa = PBXGroup;
 			children = (
-				A337140D1D14ABCA007465C7 /* AlcatrazIt-BridgingHeader.h */,
-				A3AACB081D14A46800DFEC9F /* AlcatrazIt */,
+				A337140D1D14ABCA007465C7 /* MakeXcodeGr8Again-BridgingHeader.h */,
+				A3AACB081D14A46800DFEC9F /* MakeXcodeGr8Again */,
 				A3AACB071D14A46800DFEC9F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,12 +73,12 @@
 		A3AACB071D14A46800DFEC9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A3AACB061D14A46800DFEC9F /* AlcatrazIt.app */,
+				A3AACB061D14A46800DFEC9F /* MakeXcodeGr8Again.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A3AACB081D14A46800DFEC9F /* AlcatrazIt */ = {
+		A3AACB081D14A46800DFEC9F /* MakeXcodeGr8Again */ = {
 			isa = PBXGroup;
 			children = (
 				A3AACB091D14A46800DFEC9F /* AppDelegate.swift */,
@@ -93,15 +93,15 @@
 				A3AACB0F1D14A46800DFEC9F /* Main.storyboard */,
 				A3AACB121D14A46800DFEC9F /* Info.plist */,
 			);
-			path = AlcatrazIt;
+			path = MakeXcodeGr8Again;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A3AACB051D14A46700DFEC9F /* AlcatrazIt */ = {
+		A3AACB051D14A46700DFEC9F /* MakeXcodeGr8Again */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A3AACB151D14A46800DFEC9F /* Build configuration list for PBXNativeTarget "AlcatrazIt" */;
+			buildConfigurationList = A3AACB151D14A46800DFEC9F /* Build configuration list for PBXNativeTarget "MakeXcodeGr8Again" */;
 			buildPhases = (
 				A3AACB021D14A46700DFEC9F /* Sources */,
 				A3AACB031D14A46700DFEC9F /* Frameworks */,
@@ -111,9 +111,9 @@
 			);
 			dependencies = (
 			);
-			name = AlcatrazIt;
-			productName = AlcatrazIt;
-			productReference = A3AACB061D14A46800DFEC9F /* AlcatrazIt.app */;
+			name = MakeXcodeGr8Again;
+			productName = MakeXcodeGr8Again;
+			productReference = A3AACB061D14A46800DFEC9F /* MakeXcodeGr8Again.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +132,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A3AACB011D14A46700DFEC9F /* Build configuration list for PBXProject "AlcatrazIt" */;
+			buildConfigurationList = A3AACB011D14A46700DFEC9F /* Build configuration list for PBXProject "MakeXcodeGr8Again" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -145,7 +145,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A3AACB051D14A46700DFEC9F /* AlcatrazIt */,
+				A3AACB051D14A46700DFEC9F /* MakeXcodeGr8Again */,
 			);
 		};
 /* End PBXProject section */
@@ -287,11 +287,11 @@
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = AlcatrazIt/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MakeXcodeGr8Again/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.perrotti-garcia.AlcatrazIt";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perrotti-garcia.MakeXcodeGr8Again";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AlcatrazIt-BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MakeXcodeGr8Again-BridgingHeader.h";
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -305,11 +305,11 @@
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = AlcatrazIt/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MakeXcodeGr8Again/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.perrotti-garcia.AlcatrazIt";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perrotti-garcia.MakeXcodeGr8Again";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AlcatrazIt-BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MakeXcodeGr8Again-BridgingHeader.h";
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -318,7 +318,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A3AACB011D14A46700DFEC9F /* Build configuration list for PBXProject "AlcatrazIt" */ = {
+		A3AACB011D14A46700DFEC9F /* Build configuration list for PBXProject "MakeXcodeGr8Again" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A3AACB131D14A46800DFEC9F /* Debug */,
@@ -327,7 +327,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A3AACB151D14A46800DFEC9F /* Build configuration list for PBXNativeTarget "AlcatrazIt" */ = {
+		A3AACB151D14A46800DFEC9F /* Build configuration list for PBXNativeTarget "MakeXcodeGr8Again" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A3AACB161D14A46800DFEC9F /* Debug */,
