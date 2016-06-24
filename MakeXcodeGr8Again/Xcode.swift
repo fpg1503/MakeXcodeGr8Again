@@ -10,13 +10,13 @@ struct Xcode {
         self.great = great
     }
     
-    func makeGreatAgain() -> Xcode? {
+    func makeGreatAgain(YOLO: Bool = false) -> Xcode? {
         guard !great else {
             print("Xcode has already been grated!")
             return self
         }
         
-        let newXcode = copy()
+        let newXcode = YOLO ? self : copy()
         return newXcode?.grate()
     }
     
