@@ -14,14 +14,8 @@ Simply drag your Xcode 8 App into the window. A new Xcode app will be created al
 Toggle the YOLO mode and drag the Xcode 8 App. That simple.
 
 ## Contributing and future improvements
-Feel free to open feature requests, issues and PRs. For now there is a small road map:
-- [ ] Fix current issues
-- [ ] Add a plugin that disables app sumissions by default
-- [ ] Improve  UI
-- [ ] Add Travis CI
+Know issues and road map are [here](https://github.com/fpg1503/MakeXcodeGr8Again/issues). Feel free to open feature requests, issues and PRs.
 
-## Know Issues
-- The regular (copying mode) doesn't not work 100% of the time
 
 ## License
 MIT
