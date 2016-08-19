@@ -16,6 +16,11 @@ class ViewController: NSViewController {
             dragView.delegate = self
         }
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.window!.title = "Make Xcode Gr8 Again"
+    }
 }
 
 extension ViewController: DragViewDelegate {
