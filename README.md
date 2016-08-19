@@ -5,7 +5,7 @@ Xcode + Plugins = 💙
 A Mac App to reenable plugins on Xcode.
 
 **Use at your own risk.** 
-(More information on the risks below)
+(More information on the risks [below](https://github.com/fpg1503/MakeXcodeGr8Again#should-i-use-it))
 
 ## Usage
 Currently there are two modes of usage: regular and YOLO.
