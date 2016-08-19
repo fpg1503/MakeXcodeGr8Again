@@ -19,7 +19,8 @@ class ViewController: NSViewController {
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        self.view.window!.title = "Make Xcode Gr8 Again"
+        
+        view.window?.title = "Make Xcode Gr8 Again"
     }
 }
 
