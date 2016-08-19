@@ -2,22 +2,18 @@ import Foundation
 
 struct XcodeCopier {
     let baseURL: URL
-    let manager = FileManager.default()
+    let manager = FileManager.default
     
     init(xcode: Xcode) {
         baseURL = xcode.url
     }
     
-    private var newURL: URL? {
-        return try? baseURL.deletingLastPathComponent().appendingPathComponent("XcodeGr8.app/")
+    private var newURL: URL {
+        return baseURL.deletingLastPathComponent().appendingPathComponent("XcodeGr8.app/")
     }
     
     func copyXcode() -> URL? {
-        guard let newURL = newURL else {
-            return .none
-        }
-        
-        guard let path = newURL.path where !manager.fileExists(atPath: path) else {
+        guard !manager.fileExists(atPath: newURL.path) else {
             return newURL
         }
         

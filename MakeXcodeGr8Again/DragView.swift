@@ -48,7 +48,7 @@ class DragView: NSView {
     }
     
     func checkExtension(drag: NSDraggingInfo) -> Bool {
-        guard let fileExtension = drag.draggedFileURL?.pathExtension?.lowercased() else {
+        guard let fileExtension = drag.draggedFileURL?.pathExtension.lowercased() else {
             return false
         }
         

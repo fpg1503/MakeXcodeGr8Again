@@ -5,7 +5,7 @@ class ViewController: NSViewController {
     
     @IBOutlet private var YOLOMode: NSButtonCell?
     
-    private var YOLO: Bool {
+    var YOLO: Bool {
         return YOLOMode?.state == NSOnState
     }
 
