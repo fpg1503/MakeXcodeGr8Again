@@ -23,7 +23,7 @@ To answer this question let's provide you with some background so you can decide
 Apple has allegedly disabled the use of plugins to avoid another incident like the [Xcode Ghost](https://en.wikipedia.org/wiki/XcodeGhost) :ghost:. In 2016's dub dub Apple announced their new [Source Editor extensions](https://developer.apple.com/videos/play/wwdc2016/414/).
 
 ## Did they provide any alternatives?
-Yes, as I mencioned above Apple announced Source Editor extensions. I was one of the first people in line for the Xcode lab to know more about it. Unfortunately these extensions are still pretty limited, run completely isolated from the Xcode process and require user interaction to do anything. They may, however, solve your problem, and if they do just use them.
+Yes, as I mentioned above Apple announced Source Editor extensions. I was one of the first people in line for the Xcode lab to know more about it. Unfortunately these extensions are still pretty limited, run completely isolated from the Xcode process and require user interaction to do anything. They may, however, solve your problem, and if they do just use them.
 
 ## What exactly are you trying to do?
 The plugins I like the most work seamlessly (without any user interaction) like [Polychromatic](https://github.com/kolinkrewinkel/Polychromatic) and [OptionalOutlets](https://github.com/fpg1503/OptionalOutlets). I've filed a radar asking for semantic highlighting support ([rdar://27028207](http://openradar.appspot.com/radar?id=6715695387639808)) but it remains **Open**. I had a discussion about it with some Apple engineers and they told me I should *file a radar for the missing funcionalities* (radar or GTFO).
