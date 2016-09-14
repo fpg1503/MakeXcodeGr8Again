@@ -8,6 +8,10 @@ A Mac App to reenable plugins on Xcode.
 (More information on the risks [below](https://github.com/fpg1503/MakeXcodeGr8Again#should-i-use-it))
 
 ## Usage
+To unsign your `Xcode.app`, just drag it into the `MakeXcodeGr8Again` gui window.
+
+  ![usage animation](https://raw.githubusercontent.com/fpg1503/MakeXcodeGr8Again/master/usage.gif)
+
 Currently there are two modes of usage: regular and YOLO.
 
 ### Regular
