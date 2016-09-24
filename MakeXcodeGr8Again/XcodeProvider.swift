@@ -5,7 +5,7 @@ struct XcodeProvider {
     private var command = "mdfind kMDItemCFBundleIdentifier = \"com.apple.dt.Xcode\""
 
     var installedXcodes: [Xcode] {
-        let output = System.run(command: command).output
+        let output = System.runOnBash(command: command).output
 
         let urls = output.map(URL.init(fileURLWithPath:))
 
