@@ -253,23 +253,7 @@ ub_unsign(FILE *in, FILE *out, const char *infile, const char *outfile, off_t si
     }
 }
 
-bool is_unsigned(char *infile) {
-
-    int infd = open(infile, O_RDONLY);
-    expect(infd != -1, infile);
-    struct stat stat;
-    expect(fstat(infd, &stat) != -1, infile);
-
-
-    FILE *in = fdopen(infd, "rb");
-    expect(in, infile);
-
-    PRINT_DEBUG("reading infile: %s\n", infile);
-
-    FILE * outtmp = tmpfile();
-    expect(outtmp, "unable to open temp file");
-    
-
+bool is_macho_unsigned(FILE *in, char *infile) {
     off_t start = ftello(in);
     expect(start != -1, infile);
 
@@ -344,6 +328,47 @@ bool is_unsigned(char *infile) {
     }
 
     return dataoff == 0;
+}
+
+bool is_unsigned(char *infile) {
+
+    int infd = open(infile, O_RDONLY);
+    expect(infd != -1, infile);
+    struct stat stat;
+    expect(fstat(infd, &stat) != -1, infile);
+
+
+    FILE *in = fdopen(infd, "rb");
+    expect(in, infile);
+
+    uint8_t magicb[4];
+    expect(fread(&magicb, sizeof(magicb), 1, in) == 1, infile);
+    if (be32dec(&magicb) != FAT_MAGIC) {
+        expect(! fseeko(in, 0, SEEK_SET), infile);
+        return is_macho_unsigned(in, infile);
+    }
+
+    uint8_t nfat_archb[4];
+    expect(fread(&nfat_archb, sizeof(nfat_archb), 1, in) == 1, infile);
+
+
+    uint32_t nfat_arch = be32dec(&nfat_archb);
+
+    for (uint32_t i = 0; i < nfat_arch; i++) {
+        printf("  processing fat architecture %d of %d\n", i+1, nfat_arch);
+        struct fat_arch arch;
+        expect(fread(&arch, sizeof(arch), 1, in) == 1, infile);
+        off_t inarcho = ftello(in);
+        expect(inarcho != -1, infile);
+
+        uint32_t alignment = be32dec(&arch.align);
+        assert(alignment < 32);
+        alignment = 1 << alignment;
+
+        expect(! fseeko(in, be32dec(&arch.offset), SEEK_SET), infile);
+    }
+
+    return is_macho_unsigned(in, infile);
 }
 
 void unsign(char *infile, char *outfile) {
