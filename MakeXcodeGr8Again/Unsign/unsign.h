@@ -9,6 +9,7 @@
 #ifndef unsign_h
 #define unsign_h
 
+boolean_t is_unsigned(char *infile);
 void unsign(char *infile, char* outfile);
 
 #endif /* unsign_h */
