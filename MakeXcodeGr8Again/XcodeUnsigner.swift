@@ -26,24 +26,30 @@ struct XcodeUnsigner {
         try manager.moveItem(at: unsignedLocation, to: binaryLocation)
     }
 
-    private func pointer(from URL: URL) -> UnsafeMutablePointer<CChar>? {
-        let path = URL.path
-        let array = path.cString(using: .ascii)
-        return UnsafeMutablePointer(mutating: array)
-    }
-
     var isUnsigned: Bool {
-        return is_unsigned(pointer(from: binaryLocation))
+
+        let binaryPath = binaryLocation.path
+        let binaryArray = binaryPath.cString(using: .ascii)
+        let binaryPointer = UnsafeMutablePointer(mutating: binaryArray)
+
+        return is_unsigned(binaryPointer)
     }
     
     private func unsignExecutable(at originalLocation: URL, to unsignedLocation: URL) throws {
 
-        guard manager.fileExists(atPath: originalLocation.path) else {
-                throw UnsignError.inputFileDoesNotExist(originalLocation.path)
+        let inputPath = originalLocation.path
+        let outputPath = unsignedLocation.path
+        
+        guard manager.fileExists(atPath: inputPath) else {
+            throw UnsignError.inputFileDoesNotExist(inputPath)
         }
 
-        let inputPointer = pointer(from: originalLocation)
-        let outputPointer = pointer(from: unsignedLocation)
+        let inputArray = inputPath.cString(using: .ascii)
+        let outputArray = outputPath.cString(using: .ascii)
+
+
+        let inputPointer = UnsafeMutablePointer(mutating: inputArray)
+        let outputPointer = UnsafeMutablePointer(mutating: outputArray)
         
         unsign(inputPointer, outputPointer)
     }
