@@ -9,7 +9,7 @@ struct XcodeProvider {
 
         let urls = output.map(URL.init(fileURLWithPath:))
 
-        //TODO: Check if Xcode is great
+        //TODO: Check if Xcode is great, check if paths are valid
         let xcodes = urls.map { Xcode(url: $0, great: false) }
 
         return xcodes
