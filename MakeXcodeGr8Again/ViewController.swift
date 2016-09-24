@@ -43,7 +43,8 @@ extension ViewController: DragViewDelegate {
         busy = true
 
         DispatchQueue(label: "").async {
-            if let xcodeGreat = xcode.makeGreatAgain(YOLO: self.YOLO) {
+            do {
+                let xcodeGreat = try xcode.makeGreatAgain(YOLO: self.YOLO)
                 print("WOO HOO! \(xcodeGreat)")
                 self.busy = false
                 DispatchQueue.main.async {
@@ -55,9 +56,17 @@ extension ViewController: DragViewDelegate {
 
                     alert.runModal()
                 }
-            } else {
+            } catch (let error) {
                 print("Not this time, brah")
                 self.busy = false
+
+                DispatchQueue.main.async {
+                    let alert = NSAlert(error: error)
+                    alert.informativeText = error.localizedDescription
+                    alert.alertStyle = .critical
+
+                    alert.runModal()
+                }
             }
         }
 

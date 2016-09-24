@@ -12,17 +12,12 @@ struct XcodeCopier {
         return baseURL.deletingLastPathComponent().appendingPathComponent("XcodeGr8.app/")
     }
     
-    func copyXcode() -> URL? {
+    func copyXcode() throws -> URL {
         guard !manager.fileExists(atPath: newURL.path) else {
             return newURL
         }
-        
-        do {
-            try manager.copyItem(at: baseURL, to: newURL)
-            return newURL
-        } catch (let error) {
-            print("Error: \(error)")
-            return .none
-        }
+
+        try manager.copyItem(at: baseURL, to: newURL)
+        return newURL
     }
 }

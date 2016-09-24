@@ -1,5 +1,9 @@
 import Foundation
 
+enum XcodeError: String, Error {
+    case XcodeAlreadyGreat = "Xcode is already great!"
+}
+
 struct Xcode {
     
     let url: URL
@@ -13,31 +17,26 @@ struct Xcode {
         self.url = url
     }
     
-    func makeGreatAgain(YOLO: Bool = false) -> Xcode? {
+    func makeGreatAgain(YOLO: Bool = false) throws -> Xcode {
 //        guard !great else {
 //            print("Xcode has already been grated!")
-//            return self
+//            throw XcodeError.XcodeAlreadyGreat
 //        }
-        
-        let newXcode = YOLO ? self : copy()
-        return newXcode?.grate()
+
+        let newXcode = YOLO ? self : try copy()
+        return try newXcode.grate()
     }
     
-    private func copy() -> Xcode? {
+    private func copy() throws -> Xcode {
         let copier = XcodeCopier(xcode: self)
-        let newURL = copier.copyXcode()
+        let newURL = try copier.copyXcode()
         
-        return newURL.map { Xcode(url: $0) }
+        return Xcode(url: newURL)
     }
     
-    private func grate() -> Xcode? {
+    private func grate() throws -> Xcode {
         let unsigner = XcodeUnsigner(xcode: self)
-        do {
-            try unsigner.irreversiblyUnsign()
-            return Xcode(url: url)
-        } catch (let error) {
-            print("Error: \(error)")
-            return .none
-        }
+        try unsigner.irreversiblyUnsign()
+        return Xcode(url: url)
     }
 }
