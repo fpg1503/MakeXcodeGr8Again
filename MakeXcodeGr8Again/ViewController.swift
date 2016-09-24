@@ -46,6 +46,15 @@ extension ViewController: DragViewDelegate {
             if let xcodeGreat = xcode.makeGreatAgain(YOLO: self.YOLO) {
                 print("WOO HOO! \(xcodeGreat)")
                 self.busy = false
+                DispatchQueue.main.async {
+                    let alert = NSAlert()
+                    alert.messageText = "Great!"
+                    alert.informativeText = "Xcode is Great again!"
+                    alert.addButton(withTitle: "Awesome!")
+                    alert.alertStyle = .informational
+
+                    alert.runModal()
+                }
             } else {
                 print("Not this time, brah")
                 self.busy = false
