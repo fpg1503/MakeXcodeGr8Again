@@ -4,6 +4,8 @@ class ViewController: NSViewController {
     
     
     @IBOutlet private var YOLOMode: NSButtonCell?
+    @IBOutlet private var gratingView: NSView?
+    @IBOutlet private var progressIndicator: NSProgressIndicator?
     
     var YOLO: Bool {
         return YOLOMode?.state == NSOnState
@@ -22,16 +24,33 @@ class ViewController: NSViewController {
         
         view.window?.title = "Make Xcode Gr8 Again"
     }
+
+    var busy: Bool = false {
+        didSet {
+            DispatchQueue.main.async {
+                self.progressIndicator?.startAnimation(nil)
+                self.gratingView?.isHidden = !self.busy
+            }
+        }
+    }
 }
 
 extension ViewController: DragViewDelegate {
     var acceptedFileExtensions: [String] { return ["app"] }
     func dragView(_ dragView: DragView, didDragFileWith fileURL: URL) {
         let xcode = Xcode(url: fileURL)
-        if let xcodeGreat = xcode.makeGreatAgain(YOLO: YOLO) {
-            print("WOO HOO! \(xcodeGreat)")
-        } else {
-            print("Not this time, brah")
+
+        busy = true
+
+        DispatchQueue(label: "").async {
+            if let xcodeGreat = xcode.makeGreatAgain(YOLO: self.YOLO) {
+                print("WOO HOO! \(xcodeGreat)")
+                self.busy = false
+            } else {
+                print("Not this time, brah")
+                self.busy = false
+            }
         }
+
     }
 }
