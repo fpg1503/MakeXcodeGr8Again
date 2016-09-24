@@ -254,8 +254,96 @@ ub_unsign(FILE *in, FILE *out, const char *infile, const char *outfile, off_t si
 }
 
 boolean_t is_unsigned(char *infile) {
-    //TODO
-    return false;
+
+    int infd = open(infile, O_RDONLY);
+    expect(infd != -1, infile);
+    struct stat stat;
+    expect(fstat(infd, &stat) != -1, infile);
+
+
+    FILE *in = fdopen(infd, "rb");
+    expect(in, infile);
+
+    PRINT_DEBUG("reading infile: %s\n", infile);
+
+    FILE * outtmp = tmpfile();
+    expect(outtmp, "unable to open temp file");
+    
+
+    off_t start = ftello(in);
+    expect(start != -1, infile);
+
+    uint8_t magicb[4];
+    expect(fread(&magicb, sizeof(magicb), 1, in) == 1, infile);
+    uint32_t magicbe = be32dec(&magicb);
+    uint32_t magicle = le32dec(&magicb);
+
+    bool big_endian, sixtyfourbits;
+    if (magicbe == MH_MAGIC) {
+        big_endian = true;
+        sixtyfourbits = false;
+    } else if (magicbe == MH_MAGIC_64) {
+        big_endian = true;
+        sixtyfourbits = true;
+    } else if (magicle == MH_MAGIC) {
+        big_endian = false;
+        sixtyfourbits = false;
+    } else if (magicle == MH_MAGIC_64) {
+        big_endian = false;
+        sixtyfourbits = true;
+    } else {
+        fprintf(stderr, "Unknown mach-o magic number %02x %02x %02x %02x\n",
+                magicb[0], magicb[1], magicb[2], magicb[3]);
+        abort();
+    }
+
+    expect(fseeko(in, start, SEEK_SET) != -1, infile);
+
+    uint32_t (*x32dec)(const void*) = big_endian ? be32dec : le32dec;
+    void (*x32enc)(void*, uint32_t) = big_endian ? be32enc : le32enc;
+
+    uint32_t ncmds;
+    uint32_t sizeofcmds;
+    if (sixtyfourbits) {
+        struct mach_header_64 header;
+        expect(fread(&header, sizeof(header), 1, in) == 1, infile);
+        ncmds = x32dec(&header.ncmds);
+        sizeofcmds = x32dec(&header.sizeofcmds);
+        x32enc(&header.ncmds, ncmds - 1);
+        x32enc(&header.sizeofcmds, sizeofcmds - sizeof(struct linkedit_data_command));
+    } else {
+        struct mach_header header;
+        expect(fread(&header, sizeof(header), 1, in) == 1, infile);
+        ncmds = x32dec(&header.ncmds);
+        sizeofcmds = x32dec(&header.sizeofcmds);
+        x32enc(&header.ncmds, ncmds - 1);
+        x32enc(&header.sizeofcmds, sizeofcmds - sizeof(struct linkedit_data_command));
+    }
+
+    uint32_t dataoff = 0, datasize = 0;
+    for (uint32_t i = 0; i < ncmds; i++) {
+        off_t lc_start = ftello(in);
+        expect(lc_start != -1, infile);
+
+        struct load_command lc;
+        expect(fread(&lc, sizeof(lc), 1, in) == 1, infile);
+        uint32_t cmd = x32dec(&lc.cmd);
+        uint32_t cmdsize = x32dec(&lc.cmdsize);
+
+        expect(fseeko(in, lc_start, SEEK_SET) != -1, infile);
+        if (cmd == LC_CODE_SIGNATURE) {
+            printf("    found LC_CODE_SIGNATURE\n");
+            assert(dataoff == 0);
+            struct linkedit_data_command lc_sig;
+            assert(cmdsize == sizeof(lc_sig));
+            expect(fread(&lc_sig, sizeof(lc_sig), 1, in) == 1, infile);
+            dataoff = x32dec(&lc_sig.dataoff);
+            assert(dataoff != 0);
+            datasize = x32dec(&lc_sig.datasize);
+        }
+    }
+
+    return dataoff == 0;
 }
 
 void unsign(char *infile, char *outfile) {
