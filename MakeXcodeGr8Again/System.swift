@@ -17,22 +17,22 @@ struct System {
 
     static func run(command: String, args: String...) -> CommandReturn {
 
-        let task = Process()
-        task.launchPath = command
-        task.arguments = args
+        let process = Process()
+        process.launchPath = command
+        process.arguments = args
 
         let outputPipe = Pipe()
-        task.standardOutput = outputPipe
+        process.standardOutput = outputPipe
         let errorPipe = Pipe()
-        task.standardError = errorPipe
+        process.standardError = errorPipe
 
-        task.launch()
+        process.launch()
 
         let output = outputPipe.stringsToEndOfFile()
         let error = errorPipe.stringsToEndOfFile()
         
-        task.waitUntilExit()
-        let status = task.terminationStatus
+        process.waitUntilExit()
+        let status = process.terminationStatus
         
         return (output, error, status)
     }
