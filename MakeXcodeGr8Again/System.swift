@@ -15,6 +15,10 @@ struct System {
 
     typealias CommandReturn = (output: [String], error: [String], exitCode: Int32)
 
+    static func runOnBash(command: String) -> CommandReturn {
+        return run(command: "/bin/bash", args: "-l", "-c", command)
+    }
+
     static func run(command: String, args: String...) -> CommandReturn {
 
         let process = Process()
