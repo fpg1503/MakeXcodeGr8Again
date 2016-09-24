@@ -38,6 +38,16 @@
 #include <mach-o/fat.h>
 #include <mach-o/loader.h>
 
+#ifdef DEBUG
+    #define DEBUG_UNSIGN
+#endif
+
+#ifdef DEBUG_UNSIGN
+    #define PRINT_DEBUG printf
+#else
+    #define PRINT_DEBUG //
+#endif
+
 #define BUF_SZ 4096
 
 static void
@@ -251,43 +261,45 @@ ub_unsign(FILE *in, FILE *out, const char *infile, const char *outfile, off_t si
 
 void unsign(char *infile, char *outfile) {
 
-    printf("%s - %s", infile, outfile);
+    PRINT_DEBUG("%s - %s", infile, outfile);
     
-        expect(outfile, "allocate");
+    expect(outfile, "allocate");
 
-        int infd = open(infile, O_RDONLY);
-        expect(infd != -1, infile);
-        struct stat stat;
-        expect(fstat(infd, &stat) != -1, infile);
+    int infd = open(infile, O_RDONLY);
+    expect(infd != -1, infile);
+    struct stat stat;
+    expect(fstat(infd, &stat) != -1, infile);
 
 
-        FILE *in = fdopen(infd, "rb");
-        expect(in, infile);
-        printf("reading infile: %s\n", infile);
+    FILE *in = fdopen(infd, "rb");
+    expect(in, infile);
 
-        FILE * outtmp = tmpfile();
-        expect(outtmp, "unable to open temp file");
+    PRINT_DEBUG("reading infile: %s\n", infile);
 
-        ub_unsign(in, outtmp, infile, outfile, stat.st_size);
+    FILE * outtmp = tmpfile();
+    expect(outtmp, "unable to open temp file");
 
-        fclose(in);
+    ub_unsign(in, outtmp, infile, outfile, stat.st_size);
 
-        int outfd = open(outfile, O_CREAT | O_TRUNC | O_WRONLY,
-                         S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH /*755*/);
-        expect(outfd != -1, outfile);
-        FILE *outactual = fdopen(outfd, "wb");
-        expect(outactual, outfile);
+    fclose(in);
 
-        unsigned char buf[BUF_SZ];
+    int outfd = open(outfile, O_CREAT | O_TRUNC | O_WRONLY,
+                     S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH /*755*/);
+    expect(outfd != -1, outfile);
+    FILE *outactual = fdopen(outfd, "wb");
+    expect(outactual, outfile);
 
-        fseek(outtmp, 0, SEEK_SET);
-        do {
-          size_t bytes_read = fread(buf, 1, BUF_SZ, outtmp);
+    unsigned char buf[BUF_SZ];
 
-          if (bytes_read > 0) {
-            size_t bytes_written = fwrite(buf, 1, bytes_read, outactual);
-            expect(bytes_written == bytes_read, "didnt write output file completely");
-          }
-        } while (!feof(outtmp));
-        printf("wrote outfile: %s\n", outfile);
+    fseek(outtmp, 0, SEEK_SET);
+    do {
+      size_t bytes_read = fread(buf, 1, BUF_SZ, outtmp);
+
+      if (bytes_read > 0) {
+        size_t bytes_written = fwrite(buf, 1, bytes_read, outactual);
+        expect(bytes_written == bytes_read, "didnt write output file completely");
+      }
+    } while (!feof(outtmp));
+
+    PRINT_DEBUG("wrote outfile: %s\n", outfile);
 }
