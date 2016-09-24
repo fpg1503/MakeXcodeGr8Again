@@ -13,7 +13,9 @@ private extension Pipe {
 
 struct System {
 
-    static func run(command: String, args : String...) -> (output: [String], error: [String], exitCode: Int32) {
+    typealias CommandReturn = (output: [String], error: [String], exitCode: Int32)
+
+    static func run(command: String, args: String...) -> CommandReturn {
 
         let task = Process()
         task.launchPath = command
