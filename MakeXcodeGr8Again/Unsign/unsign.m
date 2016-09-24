@@ -259,6 +259,11 @@ ub_unsign(FILE *in, FILE *out, const char *infile, const char *outfile, off_t si
         }
 }
 
+boolean_t is_unsigned(char *infile) {
+    //TODO
+    return false;
+}
+
 void unsign(char *infile, char *outfile) {
 
     PRINT_DEBUG("%s - %s", infile, outfile);
