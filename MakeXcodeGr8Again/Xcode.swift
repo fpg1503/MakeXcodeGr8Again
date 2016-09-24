@@ -3,11 +3,14 @@ import Foundation
 struct Xcode {
     
     let url: URL
-    let great: Bool
+    var great: Bool {
+        let unsigner = XcodeUnsigner(xcode: self)
+
+        return unsigner.isUnsigned
+    }
     
-    init(url: URL, great: Bool = false) {
+    init(url: URL) {
         self.url = url
-        self.great = great
     }
     
     func makeGreatAgain(YOLO: Bool = false) -> Xcode? {
@@ -24,14 +27,14 @@ struct Xcode {
         let copier = XcodeCopier(xcode: self)
         let newURL = copier.copyXcode()
         
-        return newURL.map { Xcode(url: $0, great: great) }
+        return newURL.map { Xcode(url: $0) }
     }
     
     private func grate() -> Xcode? {
         let unsigner = XcodeUnsigner(xcode: self)
         do {
             try unsigner.irreversiblyUnsign()
-            return Xcode(url: url, great: true)
+            return Xcode(url: url)
         } catch (let error) {
             print("Error: \(error)")
             return .none
