@@ -6,10 +6,12 @@
 //  Copyright © 2016 Francesco Perrotti-Garcia. All rights reserved.
 //
 
+#include <stdbool.h>
+
 #ifndef unsign_h
 #define unsign_h
 
-boolean_t is_unsigned(char *infile);
+bool is_unsigned(char *infile);
 void unsign(char *infile, char* outfile);
 
 #endif /* unsign_h */

@@ -253,7 +253,7 @@ ub_unsign(FILE *in, FILE *out, const char *infile, const char *outfile, off_t si
     }
 }
 
-boolean_t is_unsigned(char *infile) {
+bool is_unsigned(char *infile) {
 
     int infd = open(infile, O_RDONLY);
     expect(infd != -1, infile);
