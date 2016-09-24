@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A329B9C01D968C3800734160 /* XcodeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329B9BF1D968C3800734160 /* XcodeProvider.swift */; };
+		A329B9C21D968D5000734160 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329B9C11D968D5000734160 /* System.swift */; };
 		A337140B1D14AB9A007465C7 /* endian.m in Sources */ = {isa = PBXBuildFile; fileRef = A33714081D14AB9A007465C7 /* endian.m */; };
 		A337140C1D14AB9A007465C7 /* unsign.m in Sources */ = {isa = PBXBuildFile; fileRef = A337140A1D14AB9A007465C7 /* unsign.m */; };
 		A375D5F51D1CA9C800EBA13F /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A375D5F41D1CA9C800EBA13F /* DragView.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		A329B9BF1D968C3800734160 /* XcodeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeProvider.swift; sourceTree = "<group>"; };
+		A329B9C11D968D5000734160 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		A33714071D14AB9A007465C7 /* endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endian.h; sourceTree = "<group>"; };
 		A33714081D14AB9A007465C7 /* endian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = endian.m; sourceTree = "<group>"; };
 		A33714091D14AB9A007465C7 /* unsign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unsign.h; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */,
 				A3C4D8011D14B6F30010B6AC /* Xcode.swift */,
 				A329B9BF1D968C3800734160 /* XcodeProvider.swift */,
+				A329B9C11D968D5000734160 /* System.swift */,
 				A3C4D7FF1D14B43F0010B6AC /* XcodeCopier.swift */,
 				A33714061D14AB9A007465C7 /* Unsign */,
 				A3AACB0D1D14A46800DFEC9F /* Assets.xcassets */,
@@ -180,6 +183,7 @@
 				A337140B1D14AB9A007465C7 /* endian.m in Sources */,
 				A337140C1D14AB9A007465C7 /* unsign.m in Sources */,
 				A3AACB0A1D14A46800DFEC9F /* AppDelegate.swift in Sources */,
+				A329B9C21D968D5000734160 /* System.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
