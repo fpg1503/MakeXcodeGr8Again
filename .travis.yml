@@ -1,0 +1,3 @@
+language: objective-c
+osx_image: xcode8.2
+script: xcodebuild -project MakeXcodeGr8Again.xcodeproj -target MakeXcodeGr8Again
