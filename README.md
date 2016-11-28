@@ -1,4 +1,6 @@
 # Make Xcode Gr8 Again
+[![Build Status](https://travis-ci.org/fpg1503/MakeXcodeGr8Again.svg?branch=master)](https://travis-ci.org/fpg1503/MakeXcodeGr8Again)
+
 Xcode + Plugins = 💙 
 
 ## About
