@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: MakeXcodeGr8Again.xcodeproj
+xcode_scheme: MakeXcodeGr8Again
+osx_image: xcode8.2
