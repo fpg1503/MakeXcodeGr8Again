@@ -373,8 +373,11 @@ bool is_unsigned(char *infile) {
 
 void unsign(char *infile, char *outfile) {
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-value"
     PRINT_DEBUG("%s - %s", infile, outfile);
-
+#pragma clang diagnostic pop
+    
     expect(outfile, "allocate");
 
     int infd = open(infile, O_RDONLY);
@@ -385,9 +388,12 @@ void unsign(char *infile, char *outfile) {
 
     FILE *in = fdopen(infd, "rb");
     expect(in, infile);
-
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-value"
     PRINT_DEBUG("reading infile: %s\n", infile);
-
+#pragma clang diagnostic pop
+    
     FILE * outtmp = tmpfile();
     expect(outtmp, "unable to open temp file");
 
@@ -413,5 +419,9 @@ void unsign(char *infile, char *outfile) {
         }
     } while (!feof(outtmp));
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-value"
     PRINT_DEBUG("wrote outfile: %s\n", outfile);
+#pragma clang diagnostic pop
+    
 }
