@@ -22,9 +22,14 @@ Simply drag your Xcode 8 App into the window. A new Xcode app will be created al
 ### YOLO
 Toggle the YOLO mode and drag the Xcode 8 App. That simple. This mode is called YOLO because it overwrites your binary with the unsigned version, if by some reason the process fails and you don't have a backup you may have to re-download (and re-extract) Xcode.
 
-# I don't want to build it from the source
+# FAQ 
+## I don't want to build it from the source
 
 [Alan Hamlett](https://github.com/alanhamlett) was kind enough to [generate a binary](https://s3-us-west-1.amazonaws.com/wakatime/MakeXcodeGr8Again.app.zip). 
+
+## I've installed Xcode from the Mac App Store and the app is crashing
+
+[Michal Zelinka](https://github.com/michalzelinka) was able to solve this problem running MakeXcodeGr8Again as a privileged user.
 
 # Should I use it?
 To answer this question let's provide you with some background so you can decide for yourself.
