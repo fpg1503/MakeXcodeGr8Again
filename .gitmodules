@@ -1,0 +1,3 @@
+[submodule "Vendor/xGhostPreventer"]
+	path = Vendor/xGhostPreventer
+	url = https://github.com/insidegui/xGhostPreventer.git
