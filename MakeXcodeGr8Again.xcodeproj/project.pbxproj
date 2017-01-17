@@ -20,7 +20,26 @@
 		A3AACB411D14A63800DFEC9F /* XcodeUnsigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */; };
 		A3C4D8001D14B43F0010B6AC /* XcodeCopier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D7FF1D14B43F0010B6AC /* XcodeCopier.swift */; };
 		A3C4D8021D14B6F30010B6AC /* Xcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D8011D14B6F30010B6AC /* Xcode.swift */; };
+		DDB29AB61E2D2C1E000379B3 /* xGhostPreventer.xcplugin in Resources */ = {isa = PBXBuildFile; fileRef = DDB29AB31E2D2BFF000379B3 /* xGhostPreventer.xcplugin */; };
+		DDB29AB81E2D2C86000379B3 /* XGhostPreventerInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB29AB71E2D2C86000379B3 /* XGhostPreventerInstaller.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDB29AB21E2D2BFF000379B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDB29AAE1E2D2BFF000379B3 /* xGhostPreventer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD8DAD3D1E2CEB1900723C55;
+			remoteInfo = xGhostPreventer;
+		};
+		DDB29AB41E2D2C08000379B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDB29AAE1E2D2BFF000379B3 /* xGhostPreventer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DD8DAD3C1E2CEB1800723C55;
+			remoteInfo = xGhostPreventer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A329B9BF1D968C3800734160 /* XcodeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeProvider.swift; sourceTree = "<group>"; };
@@ -41,6 +60,8 @@
 		A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeUnsigner.swift; sourceTree = "<group>"; };
 		A3C4D7FF1D14B43F0010B6AC /* XcodeCopier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeCopier.swift; sourceTree = "<group>"; };
 		A3C4D8011D14B6F30010B6AC /* Xcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xcode.swift; sourceTree = "<group>"; };
+		DDB29AAE1E2D2BFF000379B3 /* xGhostPreventer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = xGhostPreventer.xcodeproj; path = Vendor/xGhostPreventer/xGhostPreventer.xcodeproj; sourceTree = "<group>"; };
+		DDB29AB71E2D2C86000379B3 /* XGhostPreventerInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGhostPreventerInstaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +89,7 @@
 		A3AACAFD1D14A46700DFEC9F = {
 			isa = PBXGroup;
 			children = (
+				DDB29AAE1E2D2BFF000379B3 /* xGhostPreventer.xcodeproj */,
 				A337140D1D14ABCA007465C7 /* MakeXcodeGr8Again-BridgingHeader.h */,
 				A3AACB081D14A46800DFEC9F /* MakeXcodeGr8Again */,
 				A3AACB071D14A46800DFEC9F /* Products */,
@@ -90,6 +112,7 @@
 				A375D5F41D1CA9C800EBA13F /* DragView.swift */,
 				A375D5F61D1CA9F400EBA13F /* NSDraggingInfo+DraggedFileURL.swift */,
 				A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */,
+				DDB29AB71E2D2C86000379B3 /* XGhostPreventerInstaller.swift */,
 				A3C4D8011D14B6F30010B6AC /* Xcode.swift */,
 				A329B9BF1D968C3800734160 /* XcodeProvider.swift */,
 				A329B9C11D968D5000734160 /* System.swift */,
@@ -100,6 +123,14 @@
 				A3AACB121D14A46800DFEC9F /* Info.plist */,
 			);
 			path = MakeXcodeGr8Again;
+			sourceTree = "<group>";
+		};
+		DDB29AAF1E2D2BFF000379B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDB29AB31E2D2BFF000379B3 /* xGhostPreventer.xcplugin */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +147,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DDB29AB51E2D2C08000379B3 /* PBXTargetDependency */,
 			);
 			name = MakeXcodeGr8Again;
 			productName = MakeXcodeGr8Again;
@@ -149,12 +181,28 @@
 			mainGroup = A3AACAFD1D14A46700DFEC9F;
 			productRefGroup = A3AACB071D14A46800DFEC9F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DDB29AAF1E2D2BFF000379B3 /* Products */;
+					ProjectRef = DDB29AAE1E2D2BFF000379B3 /* xGhostPreventer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A3AACB051D14A46700DFEC9F /* MakeXcodeGr8Again */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DDB29AB31E2D2BFF000379B3 /* xGhostPreventer.xcplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = xGhostPreventer.xcplugin;
+			remoteRef = DDB29AB21E2D2BFF000379B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A3AACB041D14A46700DFEC9F /* Resources */ = {
@@ -163,6 +211,7 @@
 			files = (
 				A3AACB0E1D14A46800DFEC9F /* Assets.xcassets in Resources */,
 				A3AACB111D14A46800DFEC9F /* Main.storyboard in Resources */,
+				DDB29AB61E2D2C1E000379B3 /* xGhostPreventer.xcplugin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +225,7 @@
 				A329B9C01D968C3800734160 /* XcodeProvider.swift in Sources */,
 				A3AACB411D14A63800DFEC9F /* XcodeUnsigner.swift in Sources */,
 				A3C4D8021D14B6F30010B6AC /* Xcode.swift in Sources */,
+				DDB29AB81E2D2C86000379B3 /* XGhostPreventerInstaller.swift in Sources */,
 				A375D5F51D1CA9C800EBA13F /* DragView.swift in Sources */,
 				A375D5F71D1CA9F400EBA13F /* NSDraggingInfo+DraggedFileURL.swift in Sources */,
 				A3C4D8001D14B43F0010B6AC /* XcodeCopier.swift in Sources */,
@@ -188,6 +238,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDB29AB51E2D2C08000379B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = xGhostPreventer;
+			targetProxy = DDB29AB41E2D2C08000379B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A3AACB0F1D14A46800DFEC9F /* Main.storyboard */ = {

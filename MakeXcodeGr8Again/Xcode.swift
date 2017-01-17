@@ -36,7 +36,11 @@ struct Xcode {
     
     private func grate() throws -> Xcode {
         let unsigner = XcodeUnsigner(xcode: self)
+        
         try unsigner.irreversiblyUnsign()
+        
+        try XGhostPreventerInstaller().install()
+        
         return Xcode(url: url)
     }
 }
