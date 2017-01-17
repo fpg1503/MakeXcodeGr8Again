@@ -21,6 +21,7 @@
 		A3C4D8001D14B43F0010B6AC /* XcodeCopier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D7FF1D14B43F0010B6AC /* XcodeCopier.swift */; };
 		A3C4D8021D14B6F30010B6AC /* Xcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D8011D14B6F30010B6AC /* Xcode.swift */; };
 		DDB29AB61E2D2C1E000379B3 /* xGhostPreventer.xcplugin in Resources */ = {isa = PBXBuildFile; fileRef = DDB29AB31E2D2BFF000379B3 /* xGhostPreventer.xcplugin */; };
+		DDB29AB81E2D2C86000379B3 /* XGhostPreventerInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB29AB71E2D2C86000379B3 /* XGhostPreventerInstaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		A3C4D7FF1D14B43F0010B6AC /* XcodeCopier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeCopier.swift; sourceTree = "<group>"; };
 		A3C4D8011D14B6F30010B6AC /* Xcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xcode.swift; sourceTree = "<group>"; };
 		DDB29AAE1E2D2BFF000379B3 /* xGhostPreventer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = xGhostPreventer.xcodeproj; path = Vendor/xGhostPreventer/xGhostPreventer.xcodeproj; sourceTree = "<group>"; };
+		DDB29AB71E2D2C86000379B3 /* XGhostPreventerInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGhostPreventerInstaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				A375D5F41D1CA9C800EBA13F /* DragView.swift */,
 				A375D5F61D1CA9F400EBA13F /* NSDraggingInfo+DraggedFileURL.swift */,
 				A3AACB401D14A63800DFEC9F /* XcodeUnsigner.swift */,
+				DDB29AB71E2D2C86000379B3 /* XGhostPreventerInstaller.swift */,
 				A3C4D8011D14B6F30010B6AC /* Xcode.swift */,
 				A329B9BF1D968C3800734160 /* XcodeProvider.swift */,
 				A329B9C11D968D5000734160 /* System.swift */,
@@ -222,6 +225,7 @@
 				A329B9C01D968C3800734160 /* XcodeProvider.swift in Sources */,
 				A3AACB411D14A63800DFEC9F /* XcodeUnsigner.swift in Sources */,
 				A3C4D8021D14B6F30010B6AC /* Xcode.swift in Sources */,
+				DDB29AB81E2D2C86000379B3 /* XGhostPreventerInstaller.swift in Sources */,
 				A375D5F51D1CA9C800EBA13F /* DragView.swift in Sources */,
 				A375D5F71D1CA9F400EBA13F /* NSDraggingInfo+DraggedFileURL.swift in Sources */,
 				A3C4D8001D14B43F0010B6AC /* XcodeCopier.swift in Sources */,
