@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+if [ -z "$APP" ]; then
+  APP="/Applications/XcodeGr8.app"
+fi
+
+running=$(ps -ef | grep "$APP/Contents/MacOS/Xcode" | wc -l)
+if [ $running != 1 ]; then
+  echo "Please quit the Xcode app first."
+  exit 1
+fi
+
+KEYCHAIN=$(tr -d "\"" <<< `security default-keychain`)
+# security unlock-keychain "$KEYCHAIN"
+
+echo "Importing self-signed cert to default keychain..."
+security import ./XcodeSigner.pem -k "$KEYCHAIN"
+security import ./XcodeSigner.p12 -k "$KEYCHAIN" -P xcodesigner
+# security add-trusted-cert -k "$KEYCHAIN" ./XcodeSigner.pem
+
+echo "Resigning $APP, this may take a while..."
+sudo codesign -f -s XcodeSigner $APP
+
+echo "Installing Alcatraz..."
+curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/deploy/Scripts/install.sh | sh
+
+echo "Updating Alcatraz to use latest Xcode DVTPluginCompatibilityUUID..."
+UUID=$(defaults read $APP/Contents/Info.plist DVTPlugInCompatibilityUUID)
+find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I{} defaults write {} DVTPlugInCompatibilityUUIDs -array-add $UUID
+
+exit 0
