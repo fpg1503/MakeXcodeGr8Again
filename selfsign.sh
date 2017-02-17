@@ -13,6 +13,14 @@ fi
 KEYCHAIN=$(tr -d "\"" <<< `security default-keychain`)
 # security unlock-keychain "$KEYCHAIN"
 
+echo "Downloading self-signed cert..."
+if [ ! -f XcodeSigner.pem ]; then
+  curl -L https://raw.githubusercontent.com/alanhamlett/MakeXcodeGr8Again/master/XcodeSigner.pem -o XcodeSigner.pem
+fi
+if [ ! -f XcodeSigner.p12 ]; then
+  curl -L https://raw.githubusercontent.com/alanhamlett/MakeXcodeGr8Again/master/XcodeSigner.p12 -o XcodeSigner.p12
+fi
+
 echo "Importing self-signed cert to default keychain..."
 security import ./XcodeSigner.pem -k "$KEYCHAIN"
 security import ./XcodeSigner.p12 -k "$KEYCHAIN" -P xcodesigner
