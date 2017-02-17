@@ -28,4 +28,5 @@ echo "Updating Alcatraz to use latest Xcode DVTPluginCompatibilityUUID..."
 UUID=$(defaults read $APP/Contents/Info.plist DVTPlugInCompatibilityUUID)
 find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I{} defaults write {} DVTPlugInCompatibilityUUIDs -array-add $UUID
 
+echo "Finished. You may now use Xcode with Alcatraz and other plugins."
 exit 0
