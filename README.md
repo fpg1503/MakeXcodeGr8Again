@@ -1,12 +1,12 @@
 # Make Xcode Gr8 Again
 [![Build Status](https://travis-ci.org/fpg1503/MakeXcodeGr8Again.svg?branch=master)](https://travis-ci.org/fpg1503/MakeXcodeGr8Again)
 
-Xcode + Plugins = 💙 
+Xcode + Plugins = 💙
 
 ## About
 A Mac App to reenable plugins on Xcode.
 
-**Use at your own risk.** 
+**Use at your own risk.**
 (More information on the risks [below](https://github.com/fpg1503/MakeXcodeGr8Again#should-i-use-it))
 
 ## Usage
@@ -21,11 +21,32 @@ Simply drag your Xcode 8 App into the window. A new Xcode app will be created al
 
 ### YOLO
 Toggle the YOLO mode and drag the Xcode 8 App. That simple. This mode is called YOLO because it overwrites your binary with the unsigned version, if by some reason the process fails and you don't have a backup you may have to re-download (and re-extract) Xcode.
+1. Run this Terminal command:
 
-# FAQ 
+## Non-GUI Version
+
+To self-sign Xcode 8 via Terminal, run this command:
+
+  ```
+  curl -fsSL https://raw.githubusercontent.com/fpg1503/MakeXcodeGr8Again/master/selfsign.sh | sh
+  ```
+
+For Xcode Beta, run this terminal command:
+
+  ```
+  curl -fsSL https://raw.githubusercontent.com/fpg1503/MakeXcodeGr8Again/master/selfsign.sh | sh -s beta
+  ```
+
+To clone your `Xcode.app` and preserve the original app signature, run this command:
+
+  ```
+  curl -fsSL https://raw.githubusercontent.com/fpg1503/MakeXcodeGr8Again/master/selfsign.sh | sh -s copy
+  ```
+
+# FAQ
 ## I don't want to build it from the source
 
-[Alan Hamlett](https://github.com/alanhamlett) was kind enough to [generate a binary](https://s3-us-west-1.amazonaws.com/wakatime/MakeXcodeGr8Again.app.zip). 
+[Alan Hamlett](https://github.com/alanhamlett) was kind enough to [generate a binary](https://s3-us-west-1.amazonaws.com/wakatime/MakeXcodeGr8Again.app.zip).
 
 ## I've installed Xcode from the Mac App Store and the app is crashing
 
