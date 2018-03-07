@@ -12,6 +12,10 @@ A Mac App to reenable plugins on Xcode.
 ## Usage
 
 ### Setup
+
+We need both, the MakeXcodeGr8Again and xGhostPreventer repos. When cloning the repo use ```git clone --recurse-submodules```
+
+If you've already cloned the repo then:
 1. Clone the 'MakeXcodeGr8Again' repository
 2. cd to the repository directory
 3. run  ```git submodule init ```
